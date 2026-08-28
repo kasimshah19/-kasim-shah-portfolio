@@ -1,7 +1,6 @@
 import React from 'react';
 import { EDUCATION_DATA } from '../data/portfolioData';
 import { Building, BookOpen, GraduationCap } from 'lucide-react';
-import educationTechBg from '../assets/images/education_academic_workspace_1787543695911.jpg';
 
 export default function EducationSection() {
   return (
@@ -31,7 +30,7 @@ export default function EducationSection() {
             loop
             muted
             playsInline
-            src="/education-bg.mp4"
+            src="/about-bg.mp4"
             className="w-full h-full object-cover object-center opacity-70 scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-[#121211]/70 via-[#181716]/50 to-[#0E0E0D]/70" />

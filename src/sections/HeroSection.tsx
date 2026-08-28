@@ -24,16 +24,39 @@ export default function HeroSection({ onNavigate, isReady = true }: HeroSectionP
           animate={{ opacity: isReady ? 1 : 0, scale: isReady ? 1.05 : 1.08 }}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
         >
+          {/* Cinematic Video Layer - Desktop & Laptop */}
+          <video
+            src="/robot.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="hidden md:block w-full h-full object-cover md:object-[center_right] contrast-[1.05] saturate-110 opacity-95"
+          />
+
+          {/* Static Image Layer - Mobile & Tablets */}
           <img
             src={heroBgImage}
             alt="Kasim Shah developer workspace"
             referrerPolicy="no-referrer"
-            className="w-full h-full object-cover object-right md:object-[center_right]"
+            className="block md:hidden w-full h-full object-cover object-right"
           />
 
-          {/* Gradients ensuring perfect readability and blending */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#F4F0E8] via-[#F4F0E8]/90 sm:via-[#F4F0E8]/80 md:via-[#F4F0E8]/65 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#F4F0E8] via-transparent to-[#F4F0E8]/20" />
+          {/* Premium Glass & Vignette Overlays */}
+          {/* 1. Base Gradient for Text Readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#F4F0E8] via-[#F4F0E8]/95 sm:via-[#F4F0E8]/85 to-transparent/10" />
+          
+          {/* 2. Top and Bottom Soft Fade */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#F4F0E8] via-transparent to-[#F4F0E8]/30" />
+          
+          {/* 3. Sleek Radial Vignette to focus cinematic feeling */}
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_20%,#F4F0E8_110%)] opacity-80" />
+          
+          {/* 4. Elegant Micro-dot Overlay for Tech Vibe */}
+          <div className="absolute inset-0 bg-[radial-gradient(#141413_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.04] pointer-events-none" />
+          
+          {/* 5. Subtle Brand Color Tinting */}
+          <div className="absolute inset-0 bg-[#D94E28]/[0.02] mix-blend-color-burn" />
         </motion.div>
 
         {/* Content Container (Matches reference image) */}
